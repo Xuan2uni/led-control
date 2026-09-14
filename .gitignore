@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+build/
+dist/
+*.bin
+*.elf
+*.map
+*.log
+.DS_Store
+Thumbs.db
+models/*.task
+models/*.part

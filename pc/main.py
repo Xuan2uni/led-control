@@ -163,9 +163,9 @@ options = GestureRecognizerOptions(
     min_tracking_confidence=0.5,
 )
 
-# 诊断结果：编号 0 是电脑前置摄像头，编号 1 是外接 USB Camera。
+# 当前系统只检测到编号 0 的摄像头。
 # DirectShow 对普通 UVC 摄像头兼容性较好。
-camera = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+camera = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 if not camera.isOpened():
     raise RuntimeError("无法打开摄像头，请检查摄像头权限或设备编号。")

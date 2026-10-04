@@ -83,7 +83,7 @@ python pc\main.py
 
 首次运行会从 MediaPipe 官方地址下载约 8 MB 的手势识别模型，并校验 SHA-256；以后会直接使用本地模型。程序会自动寻找 CH340/CH343 串口。按 `Q` 退出，退出时会向 ESP32 发送关灯命令。
 
-当前摄像头编号在 `pc/main.py` 中设置为 `1`，对应开发时使用的外接 USB 摄像头。如果设备顺序发生变化，可将 `cv2.VideoCapture(1, cv2.CAP_DSHOW)` 中的编号改为检测到的摄像头编号。
+当前摄像头编号在 `pc/main.py` 中设置为 `0`，对应系统当前检测到的摄像头。如果设备顺序发生变化，可将 `cv2.VideoCapture(0, cv2.CAP_DSHOW)` 中的编号改为检测到的摄像头编号。
 
 ## 使用的开源组件
 
@@ -93,4 +93,3 @@ python pc\main.py
 - [Arduino-ESP32](https://github.com/espressif/arduino-esp32)：ESP32-S3 Arduino 支持
 
 运行所需的 `models/gesture_recognizer.task` 会在首次启动时自动下载，因此不存入 Git 仓库。
-
